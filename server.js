@@ -31,6 +31,10 @@ app.use('/auth', require('./routes/authRoutes'))
 app.use('/users', require('./routes/userRoutes'))
 app.use('/notes', require('./routes/noteRoutes'))
 app.use('/studentRecords', require('./routes/studentRecordRoutes'));
+app.use('/cyberSecurityTutors', require('./routes/cyberSecurityTutorRoutes'))
+app.use('/bigDataAnalyticsTutors', require('./routes/bigDataAnalyticsTutorRoutes'))
+app.use('/machineLearningTutors', require('./routes/machineLearningTutorRoutes'))
+app.use('/mobileAppGameDevelopmentTutors', require('./routes/mobileAppGameDevelopmentTutorRoutes'))
 
 app.all('*', (req, res) => {
     res.status(404)
