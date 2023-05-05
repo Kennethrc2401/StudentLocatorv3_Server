@@ -13,9 +13,9 @@ const getAllBigDataAnalyticsTutors = async (req, res) => {
         return res.status(400).json({ message: 'No Big Data Analytics Tutors found' })
     }
 
-    const bigDataAnalyticsTutorsWithUser = await Promise.all(mobileAppGameDevelopmentTutors.map(async (mobileAppGameDevelopmentTutor) => {
-        const user = await User.findById(mobileAppGameDevelopmentTutor.user).lean().exec()
-        return { ...mobileAppGameDevelopmentTutor, username: user.username }
+    const bigDataAnalyticsTutorsWithUser = await Promise.all(bigDataAnalyticsTutors.map(async (bigDataAnalyticsTutor) => {
+        const user = await User.findById(bigDataAnalyticsTutor.user).lean().exec()
+        return { ...bigDataAnalyticsTutor, username: user.username }
     }))
 
     res.json(bigDataAnalyticsTutorsWithUser)
